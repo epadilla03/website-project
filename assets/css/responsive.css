@@ -1,0 +1,556 @@
+/*----------------------------------
+    MEDIUM LAYOUT: 1280px
+-----------------------------------*/
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+}
+
+/*----------------------------------
+    TABLET LAYOUT: 768px
+------------------------------------*/
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  section {
+    padding: 48px 0;
+  }
+  .section-header {
+    margin-bottom: 24px;
+  }
+  .section-header h2 {
+    font-size: 36px;
+  }
+
+  #header {
+    height: 80px;
+    padding: 0;
+  }
+  #header.header-scrolled {
+    height: 80px;
+  }
+  #header .logo {
+    margin: 0;
+    padding: 0;
+    border: 0px none;
+  }
+  #header .logo img {
+    max-height: 48px;
+  }
+
+  #header .header-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-wrapper {
+    gap: 12px;
+  }
+  .nav-wrapper .navbar {
+    order: 2;
+  }
+
+  .navbar a.nav-link.order-online-btn.catering-btn {
+    margin: 0;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .slider-area h2 {
+    padding: 0 75px;
+  }
+  .slider-area h1 {
+    font-size: 48px;
+  }
+  .slider-area h2 img {
+    max-height: 148px;
+  }
+  .pogoSlider-slide {
+    padding-top: 0;
+  }
+  .slider-area .pogoSlider--navBottom .pogoSlider-nav {
+    display: block;
+  }
+
+  #home-welcome .welcome-img {
+    height: 300px;
+  }
+  #home-welcome .welcome-img,
+  #home-welcome .welcome-text {
+    width: 100% !important;
+  }
+
+  #home-welcome .welcome-text {
+    padding: 36px 24px;
+    order: 2;
+  }
+  #home-welcome .welcome-text p {
+    font-size: 18px;
+    margin: 0;
+  }
+  #home-welcome .welcome-text p span {
+    margin: 16px 0 0 0;
+  }
+  #home-welcome .welcome-text p span a {
+    display: inline-flex;
+  }
+
+  #home-specialoffers .specialoffers-img {
+    height: 300px;
+    order: 1;
+  }
+  #home-specialoffers .specialoffers-img,
+  #home-specialoffers .specialoffers-info {
+    width: 100% !important;
+  }
+  #home-specialoffers .specialoffers-info {
+    padding: 36px 24px;
+    order: 2;
+  }
+
+  #home-welcome,
+  #home-specialoffers {
+    padding: 0;
+  }
+
+  .specialoffers-info ul {
+    padding: 0;
+  }
+  .specialoffers-info ul li {
+    margin-bottom: 12px;
+  }
+
+  .gallery-row1 img,
+  .gallery-row2 img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  #gallery {
+    padding: 0;
+  }
+
+  #home-google-reviews .container {
+    width: 80%;
+  }
+
+  .website-acs p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  #footer {
+    padding: 0;
+  }
+  #footer .footer-top {
+    padding: 36px 0;
+  }
+  #footer .footer-top .col-7,
+  #footer .footer-top .col-5 {
+    width: 100%;
+  }
+
+  #footer .footer-top h3 {
+    margin: 0 0 16px 0;
+  }
+  #footer .footer-top h3 span {
+    font-size: 22px;
+  }
+  #footer .footer-top .col-12 {
+    gap: 24px;
+  }
+  #footer .footer-top .footer-address,
+  #footer .footer-top .footer-hours {
+    width: 100%;
+  }
+  #footer .footer-top .footer-hours ul li {
+    margin: 0 0 8px 0;
+  }
+  #footer .footer-top .footer-hours ul li:last-child {
+    margin: 0;
+  }
+  #footer .footer-top .footer-hours ul li span {
+    /*display:block;*/
+  }
+
+  #footer .footer-top .footer-contact {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-top .footer-phone,
+  .footer-top .footer-email {
+    width: 100%;
+  }
+
+  #footer .footer-top .footer-address,
+  #footer .footer-top .footer-hours,
+  #footer .footer-top .footer-logo {
+    margin: 0 0 24px 0;
+  }
+
+  #footer .footer-btm {
+    padding: 16px 0;
+  }
+  #footer .footer-btm .col-6 {
+    width: 100%;
+  }
+  #footer .footer-btm ul {
+    justify-content: center;
+    margin: 0 0 10px 0;
+  }
+  #footer .footer-btm p {
+    text-align: center;
+    margin: 0;
+  }
+
+  #footer .footer-btm p strong b {
+    font-size: 15px;
+  }
+
+  .website-acs {
+    padding: 156px 0 48px 0;
+  }
+  .website-acs .section-header h2 {
+    font-size: 36px;
+  }
+  .website-acs .website-info-block {
+    padding: 0;
+  }
+  .website-acs .website-info-block p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .locations-main .col-5 {
+    width: 50%;
+  }
+  .locations-main .location-block {
+    padding: 0;
+  }
+  .locations-main .location-block h2 span {
+    font-size: 20px;
+  }
+  .locations-main .location-block p {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  .locations-main .location-block a.order-btn {
+    font-size: 20px;
+    height: 48px;
+    line-height: 48px;
+  }
+}
+
+/*----------------------------------
+    MOBILE LAYOUT: 320px
+-----------------------------------*/
+
+@media only screen and (max-width: 767px) {
+  /*.order-btn { max-width: 100%; width: 100%;}
+	.specialoffers-btn .order-btn { max-width: 80%; width: 80%;}*/
+
+  section {
+    padding: 48px 0;
+  }
+  .section-header {
+    margin-bottom: 24px;
+  }
+  .section-header h2 {
+    font-size: 36px;
+  }
+
+  #header {
+    height: 70px;
+    padding: 0;
+  }
+  #header.header-scrolled {
+    height: 70px;
+  }
+  #header .logo {
+    margin: 0;
+    padding: 0;
+    border: 0px none;
+  }
+  #header .logo img {
+    max-height: 48px;
+  }
+
+  #header .header-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-wrapper {
+    gap: 12px;
+  }
+  .nav-wrapper .navbar {
+    order: 2;
+  }
+
+  .navbar a.nav-link.order-online-btn.catering-btn {
+    margin: 0;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .slider-area h1 {
+    font-size: 32px;
+  }
+  .slider-area h2 {
+    padding: 0 48px;
+  }
+  .slider-area h2 img {
+    max-height: 120px;
+  }
+  .slider-area a.order-btn {
+    height: 48px;
+    margin-bottom: 10px;
+  }
+  .pogoSlider-slide {
+    padding-top: 0;
+  }
+  .pogoSlider--dirCenterHorizontal .pogoSlider-dir-btn {
+    display: none;
+  }
+  .slider-area .pogoSlider--navBottom .pogoSlider-nav {
+    display: block;
+  }
+
+  /*.mobile-order-btn { display: block;}*/
+
+  #restaurant-info {
+    height: auto;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #restaurant-info a {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  #restaurant-info a i {
+    margin: 0;
+    font-size: 22px;
+  }
+  #restaurant-info a span {
+    width: 100%;
+  }
+
+  #home-welcome,
+  #home-specialoffers {
+    padding: 0;
+  }
+  #home-welcome .welcome-img {
+    height: 300px;
+    order: 1;
+  }
+  #home-welcome .welcome-img,
+  #home-welcome .welcome-text {
+    width: 100% !important;
+  }
+
+  #home-welcome .welcome-text {
+    padding: 36px 16px;
+    order: 2;
+  }
+  #home-welcome .welcome-text p {
+    font-size: 16px;
+    margin: 0;
+  }
+  #home-welcome .welcome-text p span {
+    margin: 16px 0 0 0;
+  }
+  #home-welcome .welcome-text p span a {
+    display: inline-flex;
+  }
+
+  #home-specialoffers .specialoffers-img {
+    height: 300px;
+    order: 1;
+  }
+  #home-specialoffers .specialoffers-img,
+  #home-specialoffers .specialoffers-info {
+    width: 100% !important;
+  }
+  #home-specialoffers .specialoffers-info {
+    padding: 36px 16px;
+    order: 2;
+  }
+
+  .specialoffers-info ul {
+    padding: 0;
+  }
+  .specialoffers-info ul li {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .specialoffers-info ul li:first-child {
+    font-size: 18px;
+  }
+  .specialoffers-btn {
+    margin-block-start: 24px;
+  }
+
+  #gallery {
+    padding: 48px 0;
+  }
+
+  .gallery-desktop {
+    display: none;
+  }
+  .gallery-mobile {
+    display: flex;
+  }
+
+  #gallery .owl-carousel .owl-nav > button {
+    width: 26px;
+  }
+  #gallery .gallery-slider:hover .owl-nav > button {
+    opacity: 0.65;
+  }
+  #gallery .owl-carousel .owl-nav > button.owl-prev {
+    left: 10px;
+  }
+  #gallery .owl-carousel .owl-nav > button.owl-next {
+    right: 10px;
+  }
+
+  #home-google-reviews {
+    padding: 48px 0 48px 0;
+  }
+  #home-google-reviews .container {
+    width: 100%;
+  }
+  #home-google-reviews .google-review-item .item-text {
+    margin: 0;
+    padding: 16px;
+  }
+  .google-review-item h4 {
+    font-size: 20px;
+    display: block;
+  }
+  .google-review-item span {
+    justify-content: center;
+    margin: 12px 0 0 0;
+  }
+  #home-google-reviews .google-review-inner .review-quote {
+    display: none;
+  }
+
+  #footer .footer-top {
+    padding: 36px 0;
+  }
+  #footer .footer-top h3 {
+    margin: 0 0 16px 0;
+    justify-content: center;
+  }
+  #footer .footer-top h3 i {
+    display: none;
+  }
+  #footer .footer-top h3 span {
+    font-size: 22px;
+  }
+
+  #footer .footer-top .col-4 {
+    width: 100%;
+  }
+  #footer .footer-top .footer-address,
+  #footer .footer-top .footer-hours,
+  #footer .footer-top .footer-social {
+    margin: 0 0 24px 0;
+    text-align: center;
+  }
+  #footer .footer-top .footer-phone {
+    text-align: center;
+  }
+  #footer .footer-top .footer-address ul li a br {
+    display: none;
+  }
+  #footer .footer-top .footer-social ul {
+    justify-content: center;
+  }
+  #footer .footer-top .footer-hours ul li {
+    margin: 0 0 8px 0;
+  }
+  #footer .footer-top .footer-hours ul li:last-child {
+    margin: 0;
+  }
+
+  #footer .footer-btm p {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  #footer .footer-btm p span img {
+    max-height: 60px;
+  }
+  #footer .footer-btm p strong {
+    text-align: center;
+  }
+  #footer .footer-btm p strong b {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-right: 0px none;
+  }
+  #footer .footer-btm p strong a {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .website-acs {
+    padding: 140px 0 40px 0;
+  }
+  .website-acs .section-header h2 {
+    font-size: 32px;
+  }
+  .website-acs .website-info-block {
+    padding: 0;
+    line-height: 26px;
+  }
+  .website-acs .website-info-block p {
+    font-size: 16px;
+  }
+
+  .locations-main .col-5 {
+    width: 100%;
+  }
+  .locations-main .col-5:last-child .location-block {
+    padding: 0;
+    margin: 0;
+    border-bottom: 0px none;
+  }
+  .locations-main .location-block {
+    padding: 0 0 25px 0;
+    margin: 0 0 25px 0;
+    text-align: center;
+    border-bottom: 1px solid #c3c3c3;
+  }
+  .locations-main .location-block h2 {
+    font-size: 30px;
+    margin: 0 0 10px 0;
+  }
+  .locations-main .location-block h2 span {
+    font-size: 20px;
+  }
+  .locations-main .location-block p {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+
+  #home-welcome .section-header h2:after {
+    height: 60px;
+  }
+  #view-menu .col-6 {
+    width: 100%;
+  }
+  #view-menu .order-button {
+    margin: 0 0 20px 0;
+  }
+}
+
+/*----------------------------------
+    WIDE MOBILE LAYOUT: 480px
+-----------------------------------*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .slider-area a.order-btn {
+    margin: 0 10px 12px 10px;
+  }
+}
