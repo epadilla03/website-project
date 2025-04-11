@@ -75,6 +75,9 @@
                     <div class="food-item-title">
                         <h3>Spaghetti Carbonara</h3>
                     </div>
+                    <div class="food-item-photo-holder">
+                        <img alt="Spaghetti Carbonara" src="assets/img/menu/spaghetti-carbonara.jpg" width="225" height="225">
+                    </div>
                     <div class="food-price">$14.95</div>
                     <div class="food-item-description">
                         Classic Roman-style spaghetti with crispy pancetta, egg yolk, parmesan, and black pepper. Rich, creamy, and full of flavor!
@@ -84,6 +87,9 @@
                 <div class="food-item-holder">
                     <div class="food-item-title">
                         <h3>Fettuccine Alfredo</h3>
+                    </div>
+                    <div class="food-item-photo-holder">
+                        <img alt="Fettuccine Alfredo" src="assets/img/menu/fettucine-alfedo.jpg" width="225" height="225">
                     </div>
                     <div class="food-price">$13.95</div>
                     <div class="food-item-description">
@@ -108,6 +114,9 @@
                     <div class="food-item-title">
                         <h3>Lasagna Classica</h3>
                     </div>
+                    <div class="food-item-photo-holder">
+                        <img alt="Lasagna" src="assets/img/menu/lasanga.jpg" width="225" height="225">
+                    </div>
                     <div class="food-price">$16.50</div>
                     <div class="food-item-description">
                         Layers of pasta, homemade Bolognese sauce, creamy béchamel, and melted mozzarella. A true Italian comfort dish!
@@ -131,6 +140,9 @@
                     <div class="food-item-title">
                         <h3>Seafood Linguine</h3>
                     </div>
+                    <div class="food-item-photo-holder">
+                        <img alt="Seafood Linguine" src="assets/img/menu/linguine.jpg" width="225" height="225">
+                    </div>
                     <div class="food-price">$18.95</div>
                     <div class="food-item-description">
                         Fresh shrimp, mussels, and calamari sautéed with garlic, white wine, and cherry tomatoes, served over linguine pasta.
@@ -140,6 +152,9 @@
                 <div class="food-item-holder">
                     <div class="food-item-title">
                         <h3>Rigatoni Bolognese</h3>
+                    </div>
+                    <div class="food-item-photo-holder">
+                        <img alt="Rigatoni Bolognese" src="assets/img/menu/rigatoni-bolognese.jpg" width="225" height="225">
                     </div>
                     <div class="food-price">$15.95</div>
                     <div class="food-item-description">
@@ -151,6 +166,9 @@
                     <div class="food-item-title">
                         <h3>Four Cheese Ravioli</h3>
                     </div>
+                    <div class="food-item-photo-holder">
+                        <img alt="Four Cheese Ravioli" src="assets/img/menu/four-cheese-ravioli.jpg" width="225" height="225">
+                    </div>
                     <div class="food-price">$14.50</div>
                     <div class="food-item-description">
                         Hand-stuffed ravioli filled with ricotta, mozzarella, parmesan, and provolone cheese, served with your choice of marinara or creamy alfredo sauce.
@@ -159,6 +177,186 @@
     
             </div>
         </div>
+
+        <!-- Cart Sidebar -->
+        <div id="cartSidebar" class="cart-sidebar">
+            <div class="cart-header">
+            <h4>Your Cart</h4>
+            <button id="closeCart" class="close-btn">&times;</button>
+            </div>
+            <div class="cart-items"></div>
+            <div class="cart-footer">
+            <p>Total: $<span id="cartTotal">0.00</span></p>
+            <button id="clearCart" class="clear-btn">Clear Cart</button>
+            </div>
+        </div>
+        
+        <!-- Cart Toggle Button -->
+        <button id="openCart" class="open-cart-btn">
+            <i class="bi bi-cart"></i>
+            <span id="cartCount">0</span>
+        </button>
+        
+        <!-- Add to Cart Script -->
+        <script>
+            const cart = [];
+        
+            document.querySelectorAll('.food-item-holder').forEach(item => {
+            item.addEventListener('click', () => {
+                const name = item.querySelector('h3').innerText;
+                const priceText = item.querySelector('.food-price').innerText;
+                const price = parseFloat(priceText.replace('$', ''));
+        
+                const existing = cart.find(i => i.name === name);
+                if (existing) {
+                existing.qty++;
+                } else {
+                cart.push({ name, price, qty: 1 });
+                }
+                updateCart();
+            });
+            });
+        
+            function updateCart() {
+            const cartItems = document.querySelector('.cart-items');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+        
+            cartItems.innerHTML = '';
+            let total = 0;
+            let count = 0;
+        
+            cart.forEach(item => {
+                total += item.price * item.qty;
+                count += item.qty;
+        
+                const el = document.createElement('div');
+                el.className = 'cart-item';
+                el.innerHTML = `
+                <span>${item.name} x ${item.qty}</span>
+                <span>$${(item.price * item.qty).toFixed(2)}</span>
+                <button onclick="removeItem('${item.name}')">&minus;</button>
+                `;
+                cartItems.appendChild(el);
+            });
+        
+            cartCount.textContent = count;
+            cartTotal.textContent = total.toFixed(2);
+            }
+        
+            function removeItem(name) {
+            const index = cart.findIndex(i => i.name === name);
+            if (index !== -1) {
+                if (cart[index].qty > 1) {
+                cart[index].qty--;
+                } else {
+                cart.splice(index, 1);
+                }
+            }
+            updateCart();
+            }
+        
+            document.getElementById('clearCart').addEventListener('click', () => {
+            cart.length = 0;
+            updateCart();
+            });
+        
+            document.getElementById('openCart').addEventListener('click', () => {
+            document.getElementById('cartSidebar').classList.toggle('open');
+            });
+        
+            document.getElementById('closeCart').addEventListener('click', () => {
+            document.getElementById('cartSidebar').classList.remove('open');
+            });
+        </script>
+        
+        <!-- Cart Styles -->
+        <style>
+            .cart-sidebar {
+                position: fixed;
+                top: 0;
+                right: -320px;
+                width: 300px;
+                height: 100%;
+                background: #fff;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+                z-index: 9999;
+                padding: 20px;
+                overflow-y: auto;
+            }
+        
+            .cart-sidebar.open {
+            right: 0;
+            }
+        
+            .cart-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+        
+            .close-btn {
+                background: none;
+                border: none;
+                font-size: 14px;
+            }
+        
+            .cart-item {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .cart-item button {
+                margin: 10px;
+                background-color: transparent;
+                border: 2px solid #f0e8e8;
+                border-radius: 16px;
+                padding: 0 10;
+            }
+
+            .cart-item span {
+                max-width: 250px;
+                word-wrap: break-word;
+            }
+            .cart-footer {
+                margin-top: 1rem;
+                font-weight: bold;
+            }
+        
+            .clear-btn {
+                background: #dc3545;
+                color: #fff;
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+        
+            .open-cart-btn {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #000000;
+                color: #fff;
+                border: 2px solid;
+                border-radius: 16px;
+                padding: 15px;
+                font-size: 12px;
+                z-index: 99;
+            }
+        
+            #cartCount {
+                background: #dc3545;
+                border-radius: 50%;
+                padding: 2px 6px;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+        </style>
     </section>
     
 </html>
