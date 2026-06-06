@@ -905,49 +905,79 @@ body {
 /* Gallery Section
 --------------------------------*/
 /* Better Gallery Grid */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 15px 0;
+
+#gallery {
+    padding: 40px 0;
 }
 
-/* Make each light-box wrapper an explicit box */
-.gallery-grid .glightbox {
-    display: block;
+/* DESKTOP: Dynamic Horizontal Row Layout */
+.gallery-desktop-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-desktop-flex .glightbox {
+    height: 250px; /* Base height for the row */
+    flex-grow: 1;  /* Allows elements to stretch to seamlessly fill the row width */
     overflow: hidden;
-    border-radius: 8px; /* Optional: adds a clean modern look */
-    height: 250px; /* Forces uniform rows */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.gallery-grid .glightbox:hover {
-    transform: scale(1.02);
-}
-
-/* Auto-shape the images inside the grid link boxes */
-.gallery-grid img {
-    width: 100%;
+.gallery-desktop-flex img {
+    max-width: 100%;
+    min-width: 100%;
     height: 100%;
-    object-fit: cover; /* Crop and center nicely to fit the grid cell */
-    object-position: center;
-    transition: transform 0.5s ease;
+    object-fit: cover; /* Keeps images looking crisp without squeezing */
+    vertical-align: bottom;
+    transition: transform 0.4s ease-in-out;
 }
 
-.gallery-grid .glightbox:hover img {
-    transform: scale(1.08); /* Subtle zoom effect on hover */
+.gallery-desktop-flex .glightbox:hover img {
+    transform: scale(1.06);
 }
 
-/* Mobile responsive tweak for perfectly square looks on tiny screens */
-@media (max-width: 576px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 side-by-side items on phones */
-        gap: 10px;
+/* RESPONSIVE DISPLAY TOGGLES */
+/* Default: Hide mobile slider on desktop screens */
+.gallery-mobile-slider {
+    display: none;
+}
+
+/* Mobile Screens Breakpoint */
+@media (max-width: 768px) {
+    /* Hide the desktop horizontal row view */
+    .gallery-desktop-flex {
+        display: none;
     }
-    .gallery-grid .glightbox {
-        height: 180px; /* Slightly shorter items for mobile balance */
+    
+    /* Reveal and format the mobile Owl Carousel slider */
+    .gallery-mobile-slider {
+        display: block;
     }
+    
+    .gallery-mobile-slider img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+
+/* Owl Carousel Custom Controls Overrides */
+.gallery-mobile-slider .owl-dots {
+    text-align: center;
+    margin-top: 15px;
+}
+.gallery-mobile-slider .owl-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #ddd !important;
+    border-radius: 50%;
+}
+.gallery-mobile-slider .owl-dot.active {
+    background: #ce202f !important; /* Matches your Bella Italia theme color */
 }
 
 /* ----**** [ home map section ] ****---- */
